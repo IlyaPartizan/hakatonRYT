@@ -29,6 +29,7 @@ if dirc == 1:
             md = get_distance(cords, i)
             mp = i
         plt.scatter(i[0], i[1], 1, color='BLUE')
+    print(mp)
     plt.scatter(cords[0], cords[1], color='RED')
     plt.text(cords[0], cords[1], 'Xпол', fontsize=12, color='BLACK')
     plt.scatter(mp[0], mp[1], color='RED')
@@ -56,6 +57,7 @@ elif dirc == 2:
             md = get_distance(cords, i)
             mp = i
         plt.scatter(i[0], i[1], 1, color='BLUE')
+    print(mp)
     plt.scatter(cords[0], cords[1], color='RED')
     plt.text(cords[0], cords[1], 'Xпол', fontsize=12, color='BLACK')
     plt.scatter(mp[0], mp[1], color='RED')

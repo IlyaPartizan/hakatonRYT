@@ -109,12 +109,12 @@ for i in mrsh:
     if (i[0]==prom[0]) or (i[0] > prom[0] and prev[0] < prom[0]):
         print('start', i)
         plt.scatter(i[2], i[1], color='RED')
-        plt.text(i[2], i[1], 'Начало', fontsize=12, color='BLACK')
+        plt.text(i[2], i[1], 'Начало', fontsize=18, color='BLACK')
         start = [i[1],i[2]]
     elif (i[0]==prom[1]) or (i[0] > prom[1] and prev[0] < prom[1]):
         print('end', i)
         plt.scatter(i[2], i[1], color='RED')
-        plt.text(i[2], i[1], 'Конец', fontsize=12, color='BLACK')
+        plt.text(i[2], i[1], 'Конец', fontsize=18, color='BLACK')
         end = [i[1],i[2]]
     elif i[0] in range(prom[0], prom[1]+1):
         plt.scatter(i[2], i[1], 1, color='RED')
@@ -131,8 +131,8 @@ plt.scatter(lok[0], lok[1], color='RED')
 plt.scatter(izm[0], izm[1], color='RED')
 plt.scatter(sok[0], sok[1], color='RED')
 plt.scatter(sho[0], sho[1], color='RED')
-plt.text(lok[0], lok[1], 'Локомотив', fontsize=12, color='BLACK')
-plt.text(izm[0], izm[1], 'Измайлово', fontsize=12, color='BLACK')
-plt.text(sok[0], sok[1], 'Соколиная Гора', fontsize=12, color='BLACK')
-plt.text(sho[0], sho[1], 'Шоссе Энтузиастов', fontsize=12, color='BLACK')
+plt.text(lok[0], lok[1], 'Локомотив', fontsize=18, color='BLACK')
+plt.text(izm[0], izm[1], 'Измайлово', fontsize=18, color='BLACK')
+plt.text(sok[0], sok[1], 'Соколиная Гора', fontsize=18, color='BLACK')
+plt.text(sho[0], sho[1], 'Шоссе Энтузиастов', fontsize=18, color='BLACK')
 plt.show()
