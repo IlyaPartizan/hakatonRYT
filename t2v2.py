@@ -83,9 +83,8 @@ for i in m1:
             ys[a].append((j[2], j[1], j[3]))
         else:
             ys[a] = [(j[2], j[1], j[3])]
-r1 = []
+r = []
 for i in ys.keys():
-    print(i)
     s1 = 0
     s2 = 0
     c = 0
@@ -93,9 +92,9 @@ for i in ys.keys():
         s1 += j[0]*j[2]
         s2 += j[1]*j[2]
         c += j[2]
-    r1.append((s1/c, s2/c))
+    r.append((s1/c, s2/c))
 
-for i in r1:
+for i in r:
     plt.scatter(i[0], i[1], 1, color='BLUE')
 
 lok=[37.7459800,55.8039100]
@@ -111,8 +110,16 @@ plt.text(lok[0], lok[1], 'Локомотив', fontsize=12, color='BLACK')
 plt.text(izm[0], izm[1], 'Измайлово', fontsize=12, color='BLACK')
 plt.text(sok[0], sok[1], 'Соколиная Гора', fontsize=12, color='BLACK')
 plt.text(sho[0], sho[1], 'Шоссе Энтузиастов', fontsize=12, color='BLACK')
+plt.xlim([37.735, 37.76])
+plt.ylim([55.75, 55.81])
 plt.show()
 
+res = ''
+for i in range(len(r)):
+    res += f'{r[i][0]},{r[i][1]}\n'
+file = open('res1.csv', 'w')
+file.write(res)
+file.close()
 ys = {}
 
 for i in m2:
@@ -122,9 +129,8 @@ for i in m2:
             ys[a].append((j[2], j[1], j[3]))
         else:
             ys[a] = [(j[2], j[1], j[3])]
-r1 = []
+r = []
 for i in ys.keys():
-    print(i)
     s1 = 0
     s2 = 0
     c = 0
@@ -132,9 +138,9 @@ for i in ys.keys():
         s1 += j[0]*j[2]
         s2 += j[1]*j[2]
         c += j[2]
-    r1.append((s1/c, s2/c))
+    r.append((s1/c, s2/c))
 
-for i in r1:
+for i in r:
     plt.scatter(i[0], i[1], 1, color='BLUE')
 
 lok=[37.7459800,55.8039100]
@@ -150,4 +156,13 @@ plt.text(lok[0], lok[1], 'Локомотив', fontsize=12, color='BLACK')
 plt.text(izm[0], izm[1], 'Измайлово', fontsize=12, color='BLACK')
 plt.text(sok[0], sok[1], 'Соколиная Гора', fontsize=12, color='BLACK')
 plt.text(sho[0], sho[1], 'Шоссе Энтузиастов', fontsize=12, color='BLACK')
+plt.xlim([37.735, 37.76])
+plt.ylim([55.75, 55.81])
 plt.show()
+
+res = ''
+for i in range(len(r)):
+    res += f'{r[i][0]},{r[i][1]}\n'
+file = open('res2.csv', 'w')
+file.write(res)
+file.close()
