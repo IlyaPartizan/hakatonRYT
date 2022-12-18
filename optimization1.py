@@ -10,9 +10,9 @@ def station(inp):
     delta3 = ((inp[0]-sok[0])**2+(inp[1]-sok[1])**2)**0.5
     delta4 = ((inp[0]-sho[0])**2+(inp[1]-sho[1])**2)**0.5
     delta = [delta1, delta2, delta3, delta4]
-    return min(delta, delta1, delta2, delta3, delta4)
+    return minimal(delta, delta1, delta2, delta3, delta4)
 
-def min(delta, delta1, delta2, delta3, delta4):
+def minimal(delta, delta1, delta2, delta3, delta4):
     if min(delta) == delta1:
         return 'lok'
     if min(delta) == delta2:
