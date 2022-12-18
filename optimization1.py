@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
-#наглядное решение первой задачи
-#*старая версия; обновленный файл - optimization1
+#улучшенная версия task1
 #все решения в виде требуемых функций - в файле case_solution
 def station(inp):
     lok=[55.8039100,37.7459800]
@@ -12,6 +11,9 @@ def station(inp):
     delta3 = ((inp[0]-sok[0])**2+(inp[1]-sok[1])**2)**0.5
     delta4 = ((inp[0]-sho[0])**2+(inp[1]-sho[1])**2)**0.5
     delta = [delta1, delta2, delta3, delta4]
+    return minimal(delta, delta1, delta2, delta3, delta4)
+
+def minimal(delta, delta1, delta2, delta3, delta4):
     if min(delta) == delta1:
         return 'lok'
     if min(delta) == delta2:
@@ -41,30 +43,39 @@ def direction(prev, cur):
     if prev == cur:
         return 'stay'
     if 55.7586000 <= cur[0] <=  55.8039100:
-        if get_distance(cur, sho) < get_distance(prev, sho):
-            return 'I'
-        elif get_distance(cur, lok) < get_distance(prev, lok):
-            return 'II'
-        elif get_distance(cur, sho) > get_distance(prev, sho):
-            return 'II'
-        elif get_distance(cur, lok) > get_distance(prev, lok):
-            return 'I'
-        else:
-            return 'x'
+        return get_dis1(cur, sho, lok, prev)
     elif cur[0] > 55.8039100:
-        if get_distance(cur, lok) < get_distance(prev, lok):
-            return 'I'
-        elif get_distance(cur, lok) > get_distance(prev, lok):
-            return 'II'
-        else:
-            return 'x'
+        return get_dis2(cur, sho, lok, prev)
     elif cur[0] < 55.7586000:
-        if get_distance(cur, sho) < get_distance(prev, sho):
-            return 'II'
-        elif get_distance(cur, sho) > get_distance(prev, sho):
-            return 'I'
-        else:
-            return 'x'
+        return get_dis3(cur, sho, lok, prev)
+    else:
+        return 'x'
+
+def get_dis1(cur, sho, lok, prev):
+    if get_distance(cur, sho) < get_distance(prev, sho):
+        return 'I'
+    elif get_distance(cur, lok) < get_distance(prev, lok):
+        return 'II'
+    elif get_distance(cur, sho) > get_distance(prev, sho):
+        return 'II'
+    elif get_distance(cur, lok) > get_distance(prev, lok):
+        return 'I'
+    else:
+        return 'x'
+
+def get_dis2(cur, sho, lok, prev):
+    if get_distance(cur, lok) < get_distance(prev, lok):
+        return 'I'
+    elif get_distance(cur, lok) > get_distance(prev, lok):
+        return 'II'
+    else:
+        return 'x'
+
+def get_dis3(cur, sho, lok, prev):
+    if get_distance(cur, sho) < get_distance(prev, sho):
+        return 'II'
+    elif get_distance(cur, sho) > get_distance(prev, sho):
+        return 'I'
     else:
         return 'x'
 

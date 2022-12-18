@@ -1,6 +1,6 @@
-from datetime import datetime
 import matplotlib.pyplot as plt
-
+#наглядное решение второй задачи
+#все решения в виде требуемых функций - в файле case_solution
 def stan(inp):
     lok=[55.8039100,37.7459800]
     izm=[55.7895600,37.7431300]
